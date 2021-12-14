@@ -61,9 +61,15 @@
             "aot": true,
             "assets": [
               "projects/ivip-frontend-public/src/favicon.ico",
-              "projects/ivip-frontend-public/src/assets"
+              "projects/ivip-frontend-public/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "projects/ivip-frontend-public/src/theme.less",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/ivip-frontend-public/src/styles.css"
             ],
