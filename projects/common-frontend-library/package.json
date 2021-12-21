@@ -5,7 +5,9 @@
     "@angular/common": "^11.0.0",
     "@angular/core": "^11.0.0",
     "@angular/material": "^11.2.13",
-    "ng-zorro-antd": "^11.4.2"
+    "ng-zorro-antd": "^11.4.2",
+    "keycloak-angular": "^8.4.0",
+    "keycloak-js": "^11.0.2"
   },
   "dependencies": {
     "tslib": "^2.0.0"
