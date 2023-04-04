@@ -1,0 +1,11 @@
+  <div class="logo"></div>
+  <ul nz-menu nzTheme="dark" nzMode="inline">
+
+    <li nz-menu-item><a  [routerLink]="['home']"  routerLinkActive="active" class="nav-link">Home</a></li>
+    <li nz-submenu nzTitle="Components" nzIcon="menu-unfold" (click)="handleClick($event)">
+      <ul>
+        <li nz-menu-item><a  [routerLink]="['home','component','password']"  routerLinkActive="active" class="nav-link">Password</a></li>
+        <li nz-menu-item><a  [routerLink]="['home','component','number']"  routerLinkActive="active" class="nav-link">Number</a></li>
+      </ul>
+    </li>
+  </ul>

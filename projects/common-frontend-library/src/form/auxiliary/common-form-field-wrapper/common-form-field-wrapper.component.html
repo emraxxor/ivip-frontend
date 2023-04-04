@@ -1,0 +1,10 @@
+<div *ngIf="control" class="form-group w-100">
+    <div *ngIf="!isTemplateHidden">
+      <ng-container
+        [ngTemplateOutlet]="wrapperTemplate"
+        [ngTemplateOutletContext]="{}"
+      ></ng-container>
+    </div>
+    <ng-content></ng-content>
+  <lib-common-form-error [control]="control"></lib-common-form-error>
+</div>

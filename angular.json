@@ -166,6 +166,122 @@
           }
         }
       }
+    },
+    "ivip-frontend-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ivip-frontend-demo",
+      "sourceRoot": "projects/ivip-frontend-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ivip-frontend-demo",
+            "index": "projects/ivip-frontend-demo/src/index.html",
+            "main": "projects/ivip-frontend-demo/src/main.ts",
+            "polyfills": "projects/ivip-frontend-demo/src/polyfills.ts",
+            "tsConfig": "projects/ivip-frontend-demo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ivip-frontend-demo/src/favicon.ico",
+              "projects/ivip-frontend-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ivip-frontend-demo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ivip-frontend-demo/src/environments/environment.ts",
+                  "with": "projects/ivip-frontend-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ivip-frontend-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ivip-frontend-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ivip-frontend-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ivip-frontend-demo/src/test.ts",
+            "polyfills": "projects/ivip-frontend-demo/src/polyfills.ts",
+            "tsConfig": "projects/ivip-frontend-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/ivip-frontend-demo/karma.conf.js",
+            "assets": [
+              "projects/ivip-frontend-demo/src/favicon.ico",
+              "projects/ivip-frontend-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ivip-frontend-demo/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ivip-frontend-demo/tsconfig.app.json",
+              "projects/ivip-frontend-demo/tsconfig.spec.json",
+              "projects/ivip-frontend-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ivip-frontend-demo/e2e/protractor.conf.js",
+            "devServerTarget": "ivip-frontend-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ivip-frontend-demo:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "common-frontend-library"

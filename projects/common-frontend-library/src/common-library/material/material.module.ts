@@ -1,10 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTreeModule} from '@angular/material/tree';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatSortModule} from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -23,7 +19,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatStepperModule} from '@angular/material/stepper';
 import {LayoutModule} from '@angular/cdk/layout';
-
 
 
 @NgModule({
@@ -50,7 +45,7 @@ import {LayoutModule} from '@angular/cdk/layout';
     MatSidenavModule,
     MatTooltipModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
   ],
 })
 export class MaterialModule { }
